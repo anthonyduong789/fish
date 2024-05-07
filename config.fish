@@ -11,6 +11,14 @@ end
 function n
     nvim $argv
 end
+# git add all
+function gaa
+    git add .
+end
+
+function gc
+    git commit -m "$argv"
+end
 
 # Python HTTP server
 function pythonServer
