@@ -20,6 +20,10 @@ function gc
     git commit -m "$argv"
 end
 
+function gp
+    git push
+end
+
 # Python HTTP server
 function pythonServer
     python3 -m http.server
