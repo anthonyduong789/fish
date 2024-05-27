@@ -3,7 +3,7 @@ if status is-interactive
 end
 
 
-# nvim shortcuts
+
 function nd
     nvim .
 end
@@ -56,4 +56,17 @@ function fcd
 end
 
 
-bass source ~/.nvm/nvm.sh
+function bd
+    set file (fzf --query="$argv[1]" --select-1 --exit-0 --preview 'bat --style=numbers --color=always --line-range=:500 {}')
+    if test -n "$file"
+        cd (dirname "$file")
+    end
+end
+
+
+
+
+
+
+set -gx NVM_DIR "$HOME/.nvm"
+bass source $NVM_DIR/nvm.sh >/dev/null ^/dev/null
